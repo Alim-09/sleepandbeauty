@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include("partials/head.html") %>
+
+        <!--=============== REMIX ~ ICONS ===============-->
+
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="/styles.css">
+
+        <!--=============== EMAILJS ===============-->
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init('khZ2NcvtFd8Ck5Tsh');
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact__form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // generate a five digit number for the contact_number variable
+                    this.contact_number.value = Math.random() * 100000 | 0;
+                    // these IDs from the previous steps
+                    emailjs.sendForm('service_5lvi0dm', 'template_u004o2f', this)
+                        .then(function() {
+                            console.log('SUCCESS!');
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                        });
+                });
+            }
+        </script>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+
+    <%- include("partials/header.html") %>
+
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <div class="home__container container grid">
+                <img src="/img_1.png" alt="" class="home__img">
+
+                <div class="home__data">
+                    <img src="/Sleep&Beauty_logotext.svg" class="home__alt__img" id="imgtitle">
+                    <p class="home__description">
+                        ¿Una peluquería en San Martín de Porres? ¡Nosotros!, somos la mejor peluquería zonal la cual te brinda una gran variedad de servicios y diversos productos para el cuidado de tu piel, facial, y para tu estetica.
+                    </p>
+                    <a href="#about" class="button button--flex">
+                        Seguir <i class="ri-arrow-right-down-line button__icon"></i>
+                    </a>
+                </div>
+
+                <div class="home__social">
+                    <span class="home__social-follow">Siguenos</span>
+
+                    <div class="home__social-links">
+                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="box__container">
+            <div class="box__info">
+                <img src="/foto.png" class="box__img">
+
+                <div class="box__data">
+                    <h3 class="box__h3">Zarina Gomez Mariño</h3>
+                    <div class="bigbox__p">
+                        <p class="box__p">Zarina es la fundadora y trabajadora principal del salón Sleep & Beauty, fundó el Salón en el 2007 y desde ese entonces ha venido implementando nuevas mejoras para que el salón pudiese ser mucho más afable.</p>
+                    </div>
+                </div>
+
+                <button class="box__button" href="htttps:facebook.com/zarinagomez07">More Info</button>
+            </div>
+        </div>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section container" id="about">
+            <div class="about__container grid">
+                <img src="/who.svg" alt="" class="about__img">
+
+                <div class="about__data">
+                    <h2 class="section__title about__title">
+                        ¿Quienes somos y<br>que ofrecemos?
+                    </h2>
+
+                    <p class="about__description">
+                        Fundada por Zarina Gomez, somos una peluquería zonal de San Martín de Porres. Y... ¿Que es lo que ofrecemos?
+                    </p>
+
+                    <div class="about__details">
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Multiples servicios respecto a la belleza.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Diversos tipos de productos para la piel y el cuidado.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            Un buen trato en nuestro salón.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== STEPS ====================-->
+        <section class="steps section container">
+            <div class="steps__bg">
+                <h2 class="section__title-center steps__title">
+                    Pasos para atenderte 💅
+                </h2>
+
+                <div class="steps__container grid">
+                    <div class="steps__card">
+                        <div class="steps__card-number">01</div>
+                        <h3 class="steps__card-title">Reservar</h3>
+                        <p class="steps__card-description">
+                            Reservar una cita en nuestro salón en los días y horas disponibles.
+                        </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">02</div>
+                        <h3 class="steps__card-title">Asistir</h3>
+                        <p class="steps__card-description">
+                            El siguiente paso es simplemente asistir a nuestro local 10 minutos antes de la cita.
+                        </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">03</div>
+                        <h3 class="steps__card-title">Atenderte</h3>
+                        <p class="steps__card-description">
+                            Y ya está! Eso es todo, ahora dejanos a nosotros nuestro trabajo, te atenderemos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PRODUCTS ====================-->
+        <section class="product section container" id="products">
+            <h2 class="section__title-center">
+                Nuestros Servicios
+            </h2>
+
+            <p class="product__description">
+                Aquí hay algunos de nuestros servicios que ofrecemos en nuestro salón de peluquería, entre ellos están los cortes en general, tintes, y todo tipo de modificaciones.
+            </p>
+
+            <div class="product__container grid">
+                <article class="product__card">
+                    <div class="product__and__img">
+                        <div class="product__circle"></div>
+                        <img src="/service_1.svg" alt="" class="product__img">
+                    </div>
+
+                    <h3 class="product__title">Corte de Pelo</h3>
+                    <div>
+                        <span class="price">S/.</span>
+                        <span class="product__price">13.00</span>
+                    </div>
+
+                    <!-- <button class="button--flex product__button" id="open_1">
+                        <i style="transform: rotate(225deg); padding: 2px;" class="ri-price-tag-2-line"></i>
+                    </button> -->
+                </article>
+
+                <article class="product__card">
+
+                    <div class="product__and__img">
+                     <div class="product__circle"></div>
+                     <img src="/service_3.svg" alt="" class="product__img">
+                    </div>
+
+                    <h3 class="product__title">Tinte</h3>
+                    <div>
+                        <span class="price">S/.</span>
+                        <span class="product__price">78.00</span>
+                    </div>
+
+                    <!-- <button class="button--flex product__button">
+                        <i style="transform: rotate(225deg); padding: 2px;" class="ri-price-tag-2-line"></i>
+                    </button> -->
+                </article>
+
+                <article class="product__card">
+
+                    <div class="product__and__img">
+                        <div class="product__circle"></div>
+                        <img src="/service_4.svg" alt="" class="product__img">
+                    </div>
+                    
+
+                    <h3 class="product__title">Rizado</h3>
+                    <div>
+                        <span class="price">S/.</span>
+                        <span class="product__price">35.00</span>
+                    </div>
+
+                    <!-- <button class="button--flex product__button">
+                        <i style="transform: rotate(225deg); padding: 2px;" class="ri-price-tag-2-line"></i>
+                    </button> -->
+                </article>
+
+                <article class="product__card">
+
+                    <div class="product__and__img">
+                        <div class="product__circle"></div>
+                        <img src="/service_5.svg" alt="" class="product__img">
+                    </div>
+
+
+                    <h3 class="product__title">Ondulado</h3>
+                    <div>
+                        <span class="price">S/.</span>
+                        <span class="product__price">27.00</span>
+                    </div>
+
+                    <!-- <button class="button--flex product__button">
+                        <i style="transform: rotate(225deg); padding: 2px;" class="ri-price-tag-2-line"></i>
+                    </button> -->
+                </article>
+            </div>
+        </section>
+
+        <!--==================== FLOAT WINDOWS ====================-->
+
+        <!-- <div class="float__container">
+            <div class="float__info">
+                <img src="/service_1.svg" class="float__img">
+                <div class="float__content">
+                    <h3>Titulo</h3>
+                    <p>Contenido</p>
+                </div>
+                <div class="float__button__div">
+                    <button class="float__button">Botón</button>
+                </div>
+            </div>
+        </div> -->
+
+        <!--==================== QUESTIONS ====================-->
+        <section class="questions section" id="faqs">
+            <h2 class="section__title-center questions__title container">
+                Algunas de las <br> preguntas más comunes
+            </h2>
+
+            <div class="questions__container container grid">
+                <div class="questions__group">
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Mi pelo está maltratado, ¿Aún puedo realizarme un corte?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                               Sí, te daremos medidas de reparación de la capa capilar para que el corte pueda ser mucho más efectivo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                ¿Puedo recibir un nuevo tratamiento?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Sí, trabajaremos bajo las especificaciones del anterior tratamiento que ha ido realizando y trataremos de implementar nuevas estrategias de mejora.
+                            </p>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="questions__group">
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Tengo dudas respecto a lo que me deseo hacer
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                No te preocupes, estamos aquí para ayudarte, si es necesario te recomendaremos un cambio de look y te sugeriremos algunos productos.    
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                ¿Que tengo que hacer antes de ir?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Tu pelo tiene que estár limpio para poder trabajar y aplicar los tratamientos en el de forma eficaz.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CONTACT ====================-->
+        <section class="contact section container" id="contact">
+            <div class="contact__container grid">
+                <div class="contact__box">
+                    <h2 class="section__title">
+                        Contactate <br> con nosotros
+                    </h2>
+
+                    <div class="contact__data">
+                        <div class="contact__information">
+                            <h3 class="contact__subtitle">No olvides llamarnos</h3>
+                            <span class="contact__description">
+                                <i class="ri-phone-line contact__icon"></i>
+                                +977 183 083
+                            </span>
+                        </div>
+
+                        <div class="contact__information">
+                            <h3 class="contact__subtitle">Escribenos por mail</h3>
+                            <span class="contact__description">
+                                <i class="ri-mail-line contact__icon"></i>
+                                sleepandbeautysmp@gmail.com
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="contact__form" id="form">
+                    <div class="contact__inputs">
+                        <div class="contact__content">
+                            <input type="email" placeholder=" " class="contact__input" name="from_email">
+                            <label for="" class="contact__label">Email</label>
+                        </div>
+
+                        <div class="contact__content">
+                            <input type="text" placeholder=" " class="contact__input" name="from_subject">
+                            <label for="" class="contact__label">Subject</label>
+                        </div>
+
+                        <div class="contact__content contact__area">
+                            <textarea type="text" placeholder=" " class="contact__input" name="message"></textarea>
+                            <label for="" class="contact__label">Message</label>
+                        </div>
+                    </div>
+
+                    <button class="button button--flex" type="submit" id="button">
+                        Mandar mensaje
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+   
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="">
+                <a href="#" class="footer__logo">
+                    <img src="/Sleep&Beauty_logo.svg" class="logo__footer"> Sleep & Beauty
+                </a>
+            </div>
+    
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+    
+                <ul class="footer__data">
+                    <li class="footer__information">SMP - Lima</li>
+                    <li class="footer__information">Jr. Agustín Gamarra - 3168</li>
+                    <li class="footer__information">+01 568-2071</li>
+                </ul>
+            </div>
+    
+            <div class="footer__content">
+                <h3 class="footer__title">Contact</h3>
+    
+                <ul class="footer__data">
+                    <li class="footer__information">+977 183 083</li>
+    
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/" class="footer__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://twitter.com/" class="footer__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+    
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    We Accept!
+                </h3>
+    
+                <div class="footer__cards">
+                    <img src="/tunki.svg" alt="" class="footer__card">
+                    <img src="/yape.svg" alt="" class="footer__card">
+                    <img src="/plin.svg" alt="" class="footer__card">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-fill scrollup__icon"></i>
+    </a>
+
+    <!--=============== SCROLL REVEAL ===============-->
+    <script src="/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="/main.js"></script>
+
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('khZ2NcvtFd8Ck5Tsh')
+  </script>
+
+    <script>
+        const btn = document.getElementById('button');
+        document.getElementById('form')
+         .addEventListener('submit', function(event) {
+           event.preventDefault();
+        
+           btn.value = 'Sending...';
+        
+           const serviceID = 'default_service';
+           const templateID = 'template_u004o2f';
+        
+           emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+              btn.value = 'Send Email';
+              alert('Sent!');
+            }, (err) => {
+              btn.value = 'Send Email';
+              alert(JSON.stringify(err));
+            });
+        });
+    </script>
+</body> 
+</html>
